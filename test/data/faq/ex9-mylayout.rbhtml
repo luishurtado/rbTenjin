@@ -1,0 +1,5 @@
+<?rb ## use default layout template name ?>
+<?rb @_layout = true ?>
+<div id="content">
+<?rb _buf << @_content ?>
+</div>

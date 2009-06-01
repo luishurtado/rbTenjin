@@ -1,0 +1,9 @@
+<table>
+  <tbody>
+<?rb for i in (1..100) ?>
+    <tr id="row#{i}">
+      <td>#{i}</td>
+    </tr>
+<?rb end ?>
+  </tbody>
+</table>

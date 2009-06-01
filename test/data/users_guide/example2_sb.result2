@@ -1,0 +1,9 @@
+$ rbtenjin -s example2.rbhtml
+_buf = ''; for i in [1, 2, 3]
+ _buf << %Q`<p>#{item}</p>\n`
+end
+_buf.to_s
+$ rbtenjin -sb example2.rbhtml
+for i in [1, 2, 3]
+ _buf << %Q`<p>#{item}</p>\n`
+end

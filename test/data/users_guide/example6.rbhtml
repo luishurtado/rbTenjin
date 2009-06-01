@@ -1,0 +1,19 @@
+<html>
+  <body>
+
+    <div id="sidemenu">
+<?rb import 'sidemenu.rbhtml' ?>
+    </div>
+
+    <div id="main-content">
+<?rb for item in @items ?>
+      <p>${item}</p>
+<?rb end ?>
+    </div>
+
+    <div id="footer">
+#{import 'footer.rbhtml', false}
+    </div>
+
+  </body>
+</table>

@@ -1,0 +1,5 @@
+<ul>
+<?rb for item in items ?>
+  <li>${item}</li>
+<?rb ende ?>
+</ul>

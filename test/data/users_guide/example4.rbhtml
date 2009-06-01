@@ -1,0 +1,13 @@
+<p>
+  ${@text}
+  #{@num}
+  #{@flag}
+</p>
+
+<?rb for item in @items ?>
+<p>${item}</p>
+<?rb end ?>
+
+<?rb for key, value in @hash ?>
+<p>#{key} = ${value}</p>
+<?rb end ?>

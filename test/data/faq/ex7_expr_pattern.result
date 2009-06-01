@@ -1,0 +1,4 @@
+$ ruby ex7-expr-pattern.rb
+<p>HTML escaped: AAA&amp;BBB</p>
+<p>not escaped:  AAA&BBB</p>
+<p>not escaped:  AAA&BBB</p>

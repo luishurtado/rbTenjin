@@ -1,0 +1,12 @@
+<?RB states = { "CA" => "California", ?>
+<?RB            "NY" => "New York", ?>
+<?RB            "FL" => "Florida",  ?>
+<?RB            "TX" => "Texas",  ?>
+<?RB            "HI" => "Hawaii", } ?>
+<?rb chk = { @params['state'] => ' selected="selected"' } ?>
+<select name="state">
+  <option value="">-</option>
+<?RB for code in states.keys.sort ?>
+  <option value="#{{code}}"#{chk[#{{code.inspect}}]}>${{states[code]}}</option>
+<?RB end ?>
+</select>

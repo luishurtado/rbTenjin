@@ -1,0 +1,14 @@
+$ ruby example15.rb
+ _buf << %Q`<h1>#{@title}</h1>
+<ul>\n`
+for item in @items
+ _buf << %Q` <li>#{CGI.escapeHTML((item).to_s)}</li>\n`
+end
+ _buf << %Q`</ul>\n`
+
+<h1>rbTenjin Example</h1>
+<ul>
+ <li>&lt;foo&gt;</li>
+ <li>&amp;bar</li>
+ <li>&quot;baz&quot;</li>
+</ul>

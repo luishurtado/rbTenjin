@@ -1,0 +1,6 @@
+<?RB require 'cgi' ?>
+<?RB ## ex. link_to('Show', '/show/1')  => <a href="/show/1">Show</a> ?>
+<?RB def link_to(label, url) ?>
+<?RB     return "<a href=\"#{CGI.unescape(url)}\">#{label}</a>" ?>
+<?RB end ?>
+#{{link_to 'Show '+_P('@params["name"]'), '/items/show/'+_p('@params["id"]')}}

@@ -1,0 +1,14 @@
+$ rbtenjin -s example1.rbhtml
+_buf = '';  _buf << %Q`<table>
+  <tbody>\n`
+i = 0
+for item in ['<foo>', 'bar&bar', '"baz"']
+    i += 1
+ _buf << %Q`    <tr>
+      <td>#{item}</td>
+      <td>#{escape((item).to_s)}</td>
+    </tr>\n`
+end
+ _buf << %Q`  <tbody>
+</table>\n`
+_buf.to_s

@@ -1,0 +1,12 @@
+<table>
+  <tbody>
+<?rb i = 0 ?>
+<?rb for item in ['<foo>', 'bar&bar', '"baz"'] ?>
+<?rb     i += 1 ?>
+    <tr>
+      <td>#{item}</td>
+      <td>${item}</td>
+    </tr>
+<?rb end ?>
+  <tbody>
+</table>

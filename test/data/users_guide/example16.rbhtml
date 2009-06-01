@@ -1,0 +1,4 @@
+<?rb #@ARGS label, url ?>
+<ul>
+  <li>#{link_to(label, url)}</li>
+</ul>

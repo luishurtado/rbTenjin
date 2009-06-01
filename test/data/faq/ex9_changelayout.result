@@ -1,0 +1,11 @@
+$ rbtenjin --layout=ex9-baselayout.rbhtml ex9-content.rbhtml
+<html>
+  <body>
+    <h1>Changing Layout Template Test</h1>
+<div id="content">
+foo
+bar
+baz
+</div>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+$ ruby example16a.rb
+<ul>
+  <li><a href="/">Top</a></li>
+</ul>

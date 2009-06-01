@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <title>${@title}</title>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+<?rb unless captured_as('header_part') ?>
+    <h1>${@title}</h1>
+<?rb end ?>
+    <!-- /HEADER -->
+
+    <!-- CONTENT -->
+#{@content_part}
+    <!-- /CONTENT -->
+
+    <!-- FOOTER -->
+<?rb unless captured_as('footer_part') ?>
+    <hr />
+    <address>webmaster@localhost</address>
+<?rb end ?>
+    <!-- /FOOTER -->
+
+  </body>
+</html>

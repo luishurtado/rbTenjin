@@ -1,0 +1,15 @@
+$ ruby example14.rb
+---- ruby code ----
+ _buf << %Q`<h1>#{@title}</h1>
+<ul>\n`
+for item in @items
+ _buf << %Q` <li>#{escape((item).to_s)}</li>\n`
+end
+ _buf << %Q`</ul>\n`
+---- output ----
+<h1>rbTenjin Example</h1>
+<ul>
+ <li>&lt;AAA&gt;</li>
+ <li>B&amp;B</li>
+ <li>&quot;CCC&quot;</li>
+</ul>

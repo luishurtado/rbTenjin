@@ -1,0 +1,2 @@
+$ rbtenjin -P example13.rbhtml
+<a href="/items/show/#{@params["id"]}">Show ${@params["name"]}</a>

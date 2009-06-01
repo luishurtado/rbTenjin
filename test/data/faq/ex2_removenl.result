@@ -1,0 +1,19 @@
+$ rbtenjin --layout=ex2-layout.rbhtml ex2-content.rbhtml
+<!-- -->
+foo
+bar
+baz
+
+<!-- -->
+
+<!-- -->
+foo
+bar
+baz
+<!-- -->
+
+<!-- -->
+foo
+bar
+baz
+<!-- -->

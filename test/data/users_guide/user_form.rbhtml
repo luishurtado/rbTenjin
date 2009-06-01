@@ -1,0 +1,10 @@
+<?rb #@ARGS params ?>
+<p>
+  Name:  <input type="text" name="name"  value="${params['name']}" /><br />
+  Email: <input type="text" name="email" value="${params['email']}" /><br />
+  Gender:
+<?rb gender = @params['gender'] ?>
+<?rb chk = { true=>' checked="checked"', false=>'' } ?>
+  <input type="radio" name="gender" value="m" #{chk[gender=='m']} />Male
+  <input type="radio" name="gender" value="f" #{chk[gender=='f']} />Female
+</p>

@@ -1,0 +1,5 @@
+<p>
+<?rb #@ARGS x ?>
+x = #{x}
+y = #{y}   # NameError
+</p>

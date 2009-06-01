@@ -1,0 +1,27 @@
+<html>
+ <body>
+
+<?rb ## if variable '@header_part' is defined then print it, ?>
+<?rb ## else print default header part. ?>
+  <div id="header">
+<?rb unless captured_as(:header_part) ?>
+   <img src="img/logo.png" alt="logo" ?>
+<?rb end ?>
+  </div>
+
+<?rb ## main content part ?>
+  <div id="content">
+<?rb _buf << @content_part ?>
+  </div>
+
+<?rb ## if variable '@footer_part' is defined then print it, ?>
+<?rb ## else print default footer part. ?>
+  <div id="footer">
+<?rb unless captured_as(:footer_part) ?>
+   <hr />
+   <em>webmaster@example.com</em>
+<?rb end ?>
+  </div>
+  
+ </body>
+</html>

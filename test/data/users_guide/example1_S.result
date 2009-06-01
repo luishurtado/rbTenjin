@@ -1,0 +1,14 @@
+$ rbtenjin -S example1.rbhtml
+_buf = ''; 
+
+i = 0
+for item in ['<foo>', 'bar&bar', '"baz"']
+    i += 1
+
+
+          escape((item).to_s); 
+
+end
+
+
+_buf.to_s

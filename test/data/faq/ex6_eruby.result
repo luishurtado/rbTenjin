@@ -1,0 +1,12 @@
+$ ruby ex6.rb
+<html>
+ <body>
+  <h1>eRuby template example</h1>
+  <ul>
+   <li>&lt;AAA&gt;</li>
+   <li>B&amp;B</li>
+   <li>&quot;CCC&quot;</li>
+  </ul>
+
+ </body>
+</html>

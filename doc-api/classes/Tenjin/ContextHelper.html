@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Tenjin::ContextHelper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Tenjin::ContextHelper</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/tenjin_rb.html">
+                lib/tenjin.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+helper module for <a href="BaseContext.html">BaseContext</a> class
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000016">_P</a>&nbsp;&nbsp;
+      <a href="#M000017">_decode_params</a>&nbsp;&nbsp;
+      <a href="#M000015">_p</a>&nbsp;&nbsp;
+      <a href="#M000014">captured_as</a>&nbsp;&nbsp;
+      <a href="#M000011">echo</a>&nbsp;&nbsp;
+      <a href="#M000009">escape</a>&nbsp;&nbsp;
+      <a href="#M000010">import</a>&nbsp;&nbsp;
+      <a href="#M000012">start_capture</a>&nbsp;&nbsp;
+      <a href="#M000013">stop_capture</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">_buf</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">_engine</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">_layout</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="#M000016" class="method-signature">
+          <span class="method-name">_P</span><span class="method-args">(arg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+ex. <a
+href="ContextHelper.html#M000016">_P</a>(&quot;item[&#8216;name&#8217;]&quot;)
+=&gt; ${item[&#8216;name&#8217;]}
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 206</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_P</span>(<span class="ruby-identifier">arg</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;&lt;`$#{arg}$`&gt;&quot;</span>    <span class="ruby-comment cmt"># decoded into ${...} by preprocessor</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="#M000017" class="method-signature">
+          <span class="method-name">_decode_params</span><span class="method-args">(s)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+decode &lt;`#&#8230;#`&gt; and &lt;`$&#8230;$`&gt; into #{&#8230;} and
+${&#8230;}
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000017-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 213</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_decode_params</span>(<span class="ruby-identifier">s</span>)
+      <span class="ruby-identifier">require</span> <span class="ruby-value str">'cgi'</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">s</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+      <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">dup</span>
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%3C%60%23(.*?)%23%60%3E/i</span><span class="ruby-identifier">m</span>) { <span class="ruby-node">&quot;\#\{#{CGI::unescape($1)}\}&quot;</span> }
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%3C%60%24(.*?)%24%60%3E/i</span><span class="ruby-identifier">m</span>) { <span class="ruby-node">&quot;\$\{#{CGI::unescape($1)}\}&quot;</span> }
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&amp;lt;`\#(.*?)\#`&amp;gt;/</span><span class="ruby-identifier">m</span>) { <span class="ruby-node">&quot;\#\{#{CGI::unescapeHTML($1)}\}&quot;</span> }
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&amp;lt;`\$(.*?)\$`&amp;gt;/</span><span class="ruby-identifier">m</span>) { <span class="ruby-node">&quot;\$\{#{CGI::unescapeHTML($1)}\}&quot;</span> }
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;`\#(.*?)\#`&gt;/</span><span class="ruby-identifier">m</span>, <span class="ruby-value str">'#{\1}'</span>)
+      <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/&lt;`\$(.*?)\$`&gt;/</span><span class="ruby-identifier">m</span>, <span class="ruby-value str">'${\1}'</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="#M000015" class="method-signature">
+          <span class="method-name">_p</span><span class="method-args">(arg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+ex. <a
+href="ContextHelper.html#M000015">_p</a>(&quot;item[&#8216;name&#8217;]&quot;)
+=&gt; #{item[&#8216;name&#8217;]}
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000015-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 199</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_p</span>(<span class="ruby-identifier">arg</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;&lt;`\##{arg}\#`&gt;&quot;</span>    <span class="ruby-comment cmt"># decoded into #{...} by preprocessor</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="#M000014" class="method-signature">
+          <span class="method-name">captured_as</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+if captured string is found then add it to _buf and return true, else
+return false. this is a helper method for layout template.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000014-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 189</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">captured_as</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">str</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{name}&quot;</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">str</span>
+      <span class="ruby-ivar">@_buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="#M000011" class="method-signature">
+          <span class="method-name">echo</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+add value into _buf. this is equivarent to &#8217;#{value}&#8217;.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000011-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 121</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">echo</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="#M000009" class="method-signature">
+          <span class="method-name">escape</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="ContextHelper.html#M000009">escape</a> value. this method should
+be overrided in subclass.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 108</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">val</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="#M000010" class="method-signature">
+          <span class="method-name">import</span><span class="method-args">(template_name, _append_to_buf=true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+include template. &#8216;template_name&#8217; can be filename or short
+name.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000010-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 113</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">template_name</span>, <span class="ruby-identifier">_append_to_buf</span>=<span class="ruby-keyword kw">true</span>)
+      <span class="ruby-identifier">_buf</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_buf</span>
+      <span class="ruby-identifier">output</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_engine</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">template_name</span>, <span class="ruby-identifier">context</span>=<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">layout</span>=<span class="ruby-keyword kw">false</span>)
+      <span class="ruby-identifier">_buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">output</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_append_to_buf</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">output</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="#M000012" class="method-signature">
+          <span class="method-name">start_capture</span><span class="method-args">(varname=nil) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+start capturing. returns captured string if block given, else return nil.
+if block is not given, calling <a
+href="ContextHelper.html#M000013">stop_capture</a>() is required.
+</p>
+<p>
+ex. list.rbhtml
+</p>
+<pre>
+  &lt;html&gt;&lt;body&gt;
+    &lt;h1&gt;&lt;?rb start_capture(:title) do ?&gt;Document Title&lt;?rb end ?&gt;&lt;/h1&gt;
+    &lt;?rb start_capture(:content) ?&gt;
+    &lt;ul&gt;
+     &lt;?rb for item in list do ?&gt;
+      &lt;li&gt;${item}&lt;/li&gt;
+     &lt;?rb end ?&gt;
+    &lt;/ul&gt;
+    &lt;?rb stop_capture() ?&gt;
+  &lt;/body&gt;&lt;/html&gt;
+</pre>
+<p>
+ex. layout.rbhtml
+</p>
+<pre>
+  &lt;?xml version=&quot;1.0&quot; ?&gt;
+  &lt;html xml:lang=&quot;en&quot;&gt;
+   &lt;head&gt;
+    &lt;title&gt;${@title}&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+    &lt;h1&gt;${@title}&lt;/h1&gt;
+    &lt;div id=&quot;content&quot;&gt;
+     &lt;?rb echo(@content) ?&gt;
+    &lt;/div&gt;
+   &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000012-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 156</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">start_capture</span>(<span class="ruby-identifier">varname</span>=<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-ivar">@_capture_varname</span> = <span class="ruby-identifier">varname</span>
+      <span class="ruby-ivar">@_start_position</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_buf</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-keyword kw">yield</span>
+        <span class="ruby-identifier">output</span> = <span class="ruby-identifier">stop_capture</span>()
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">output</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="#M000013" class="method-signature">
+          <span class="method-name">stop_capture</span><span class="method-args">(store_to_context=true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+stop capturing. returns captured string. see <a
+href="ContextHelper.html#M000012">start_capture</a>()&#8217;s document.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000013-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/tenjin.rb, line 173</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop_capture</span>(<span class="ruby-identifier">store_to_context</span>=<span class="ruby-keyword kw">true</span>)
+      <span class="ruby-identifier">output</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_buf</span>[<span class="ruby-ivar">@_start_position</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_buf</span>[<span class="ruby-ivar">@_start_position</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] = <span class="ruby-value str">''</span>
+      <span class="ruby-ivar">@_start_position</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@_capture_varname</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{@_capture_varname}&quot;</span>, <span class="ruby-identifier">output</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">store_to_context</span>
+        <span class="ruby-ivar">@_capture_varname</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">output</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

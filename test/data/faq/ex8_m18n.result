@@ -1,0 +1,10 @@
+$ ruby ex8-m18n.rb
+--- lang: en ---
+<div>
+ <p>Hello World!</p>
+</div>
+
+--- lang: fr ---
+<div>
+ <p>Bonjour World!</p>
+</div>

@@ -1,0 +1,11 @@
+$ rbtenjin -s --templateclass=Tenjin::ArrayBufferTemplate ex11.rbhtml
+_buf = [];  _buf.push('<table>
+'); @items.each_with_index do |item, i|
+ _buf.push('  <tr>
+    <td>', (i).to_s, '</td>
+    <td>', escape((item).to_s), '</td>
+  </tr>
+'); end
+ _buf.push('</table>
+'); 
+_buf.to_s

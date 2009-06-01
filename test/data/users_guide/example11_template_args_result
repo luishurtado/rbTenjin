@@ -1,0 +1,2 @@
+$ rbtenjin -c '@x=10;@y=20' example11.rbhtml
+example12.rbhtml:4:in `_render': undefined local variable or method `y' (NameError)

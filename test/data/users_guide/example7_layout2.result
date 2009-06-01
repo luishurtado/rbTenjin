@@ -1,0 +1,13 @@
+$ rbtenjin --layout=layout7.rbhtml content7.rbhtml
+...
+<h1>Document Title</h1>
+
+<div id="main-content">
+<table>
+  ...content...
+</table>
+
+<div>
+
+<a href="/next/page">Next page</a>
+...

@@ -1,0 +1,18 @@
+$ rbtenjin -a convert table.rbhtml
+_buf = '';  _buf << %Q`<html>
+  <body>
+    <h1>#{escape((@title).to_s)}</h1>
+    <table>\n`
+i = 0
+for item in @items
+   i += 1
+   color = i % 2 == 0 ? '#FFCCCC' : '#CCCCFF'
+ _buf << %Q`      <tr bgcolor="#{color}">
+        <td>#{i}</td>
+        <td>#{escape((item).to_s)}</td>
+      </tr>\n`
+end
+ _buf << %Q`    </table>
+  </body>
+</html>\n`
+_buf.to_s

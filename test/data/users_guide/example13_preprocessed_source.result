@@ -1,0 +1,2 @@
+$ rbtenjin --preprocess -sb example13.rbhtml
+ _buf << %Q`<a href="/items/show/#{@params["id"]}">Show #{escape((@params["name"]).to_s)}</a>\n`

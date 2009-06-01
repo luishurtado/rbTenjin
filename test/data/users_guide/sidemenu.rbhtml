@@ -1,0 +1,5 @@
+<ul>
+<?rb for item in @menu ?>
+  <li><a href="${item['url']}">${item['name']}</a></li>
+<?rb end ?>
+</ul>

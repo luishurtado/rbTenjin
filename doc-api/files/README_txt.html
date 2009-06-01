@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Mon Feb 25 00:45:04 +0900 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>README</h1>
+<table>
+<tr><td valign="top">release:</td><td>0.6.2
+
+</td></tr>
+<tr><td valign="top">copyright:</td><td>copyright(c) 2007-2008 kuwata-lab.com all rights reserved.
+
+</td></tr>
+</table>
+<h2>About</h2>
+<p>
+rbTenjin is a very fast and full-featured template engine. You can embed
+Ruby statements and expressions into your text file. rbTenjin converts it
+into Ruby program and evaluate it.
+</p>
+<h2>Features</h2>
+<ul>
+<li>Very fast (twice faster than eruby and three times faster than ERB)
+
+</li>
+<li>Lightweight (only a file which contains about 1000 lines)
+
+</li>
+<li>Not break HTML design because it uses XML Processing Instructions (PI) as
+embedded notation for Python statements.
+
+</li>
+<li>Secure because it supports escaping expression value by default.
+
+</li>
+<li>Auto caching of converted Python code.
+
+</li>
+<li>Nestable layout template
+
+</li>
+<li>Inlucde other templates
+
+</li>
+<li>Capture part of template
+
+</li>
+<li>Load YAML file as context data
+
+</li>
+<li>Preprocessing support
+
+</li>
+</ul>
+<p>
+See doc/*.html for details.
+</p>
+<h2>Installation</h2>
+<ul>
+<li>If you have installed RubyGems, just type <tt>gem install tenjin</tt>.
+
+<pre>
+  $ sudo gem install tenjin
+</pre>
+</li>
+<li>Else download rbtenjin-0.6.2.tar.bz2 and just copy
+&#8216;lib/tenjin.rb&#8217; and &#8216;bin/rbtenjin&#8217; into proper
+directory.
+
+<pre>
+  $ tar xjf rbtenjin-0.6.2.tar.bz2
+  $ cd rbtenjin-0.6.2/
+  $ sudo copy lib/tenjin.rb /usr/local/lib/ruby/1.8/site_ruby/1.8/
+  $ sudo copy bin/rbtenjin /usr/local/bin/
+</pre>
+</li>
+</ul>
+<p>
+rbTenjin is tested with Ruby 1.8.6 and Rubinius.
+</p>
+<h2>Attention</h2>
+<p>
+rbTenjin is beta released. It means that API or specification may change in
+the future.
+</p>
+<h2>License</h2>
+<p>
+MIT License
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

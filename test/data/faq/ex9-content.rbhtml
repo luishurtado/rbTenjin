@@ -1,0 +1,6 @@
+<?rb @title = 'Changing Layout Template Test' ?>
+<?rb ## specify layout template name ?>
+<?rb @_layout = 'ex9-mylayout.rbhtml' ?>
+foo
+bar
+baz

@@ -1,0 +1,11 @@
+<?rb ## '@_layout' variable is equivarent to '{% extends "foobar.html" %}' ?>
+<?rb ## in Django template engine. ?>
+<?rb @_layout = 'ex10-baselayout.rbhtml' ?>
+
+<?rb ## you can override header or footer by capturing. ?>
+<?rb start_capture(:footer_part) ?>
+<address style="text-align:right">
+  copyright&copy; 2007 kuwata-lab all rights reserved<br />
+  <a href="webmaster&#64;kuwata-lab.com">webmaster&#64;kuwata-lab.com</a>
+</address>
+<?rb stop_capture() ?>

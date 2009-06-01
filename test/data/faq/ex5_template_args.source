@@ -1,0 +1,9 @@
+$ rbtenjin -s ex5.rbhtml
+_buf = '';  _buf << %Q`<?xml version="1.0 ?>\n`
+ x = @x; y = @y;
+ _buf << %Q`<p>
+  x = #{x}
+  y = #{y}
+  z = #{z}
+</p>\n`
+_buf.to_s

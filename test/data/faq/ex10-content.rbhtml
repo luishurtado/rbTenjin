@@ -1,0 +1,12 @@
+<?rb ## '@_layout' variable is equivarent to '{% extends "foobar.html" %}' ?>
+<?rb ## in Django template engine. ?>
+<?rb @_layout = 'ex10-customlayout.rbhtml' ?>
+
+<?rb ## main content part ?>
+<?rb start_capture(:content_part) ?>
+<ul>
+<?rb for item in @items ?>
+  <li>${item}</li>
+<?rb end ?>
+</ul>
+<?rb stop_capture() ?>

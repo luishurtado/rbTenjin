@@ -1,0 +1,10 @@
+text:   foo
+num:    3.14
+flag:   yes
+items:
+  - foo
+  - bar
+  - baz
+hash:
+  x: 1
+  y: 2

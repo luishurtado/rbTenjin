@@ -1,0 +1,9 @@
+text:  #{@text}
+items:
+<?rb for item in @items ?>
+  - #{item}
+<?rb end ?>
+hash:
+<?rb for key, val in @hash ?>
+  #{key}: #{val}
+<?rb end ?>

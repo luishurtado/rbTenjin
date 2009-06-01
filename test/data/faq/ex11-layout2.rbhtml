@@ -1,0 +1,6 @@
+<html>
+  <body>
+<?rb _buf << @_content ?>
+
+  </body>
+</html>

@@ -1,0 +1,2 @@
+$ ruby ex3.rb
+ _buf << %Q`Hello #{CGI.escapeHTML((@name).to_s)}!\n`

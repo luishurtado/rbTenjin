@@ -1,0 +1,8 @@
+<table>
+<?rb @items.each_with_index do |item, i| ?>
+  <tr>
+    <td>#{i}</td>
+    <td>${item}</td>
+  </tr>
+<?rb end ?>
+</table>

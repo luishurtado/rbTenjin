@@ -1,0 +1,9 @@
+$ rbtenjin -c '@text="foo"; @items=%w[a b c]; @hash={"x"=>1,"y"=>2}' example5.rbhtml
+text:  foo
+items:
+  - a
+  - b
+  - c
+hash:
+  x: 1
+  y: 2

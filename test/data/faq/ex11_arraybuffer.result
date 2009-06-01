@@ -1,0 +1,15 @@
+$ ruby ex11.rb
+<table>
+  <tr>
+    <td>0</td>
+    <td>AAA</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>BBB</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>CCC</td>
+  </tr>
+</table>

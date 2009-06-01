@@ -1,0 +1,18 @@
+<?rb @title = 'Capture Test' ?>
+<html>
+  <body>
+
+<?rb start_capture(:content_part) ?>
+    <ul>
+<?rb for i in [0, 1, 2] ?>
+      <li>i = #{i}</li>
+<?rb end ?>
+    </ul>
+<?rb stop_capture() ?>
+
+<?rb start_capture('footer_part') ?>
+    <div class="footer">copyright&copy; 2007 kuwata-lab.com</div>
+<?rb stop_capture() ?>
+
+  </body>
+</html>

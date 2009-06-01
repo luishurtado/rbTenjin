@@ -1,0 +1,7 @@
+<?xml version="1.0 ?>
+<?rb #@ARGS x, y ?>
+<p>
+  x = #{x}
+  y = #{y}
+  z = #{z}
+</p>

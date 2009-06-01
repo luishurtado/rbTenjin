@@ -1,0 +1,2 @@
+$ rbtenjin -sb --escapefunc=CGI.escapeHTML ex3.rbhtml
+ _buf << %Q`Hello #{CGI.escapeHTML((@name).to_s)}!\n`

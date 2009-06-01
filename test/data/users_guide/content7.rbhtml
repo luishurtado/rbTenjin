@@ -1,0 +1,5 @@
+<?rb @title = 'Document Title' ?>
+<?rb @url = '/next/page' ?>
+<table>
+  ...content...
+</table>

@@ -1,0 +1,6 @@
+$ rbtenjin -s example10.rbhtml
+_buf = '';  _buf << %Q`<?xml version="1.0"?>\n`
+ title = @title; name = @name;
+ _buf << %Q`<h1>#{escape((title).to_s)}</h1>
+<p>Hello #{escape((name).to_s)}!</p>\n`
+_buf.to_s

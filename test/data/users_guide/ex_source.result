@@ -1,0 +1,8 @@
+$ rbtenjin -s ex.rbhtml
+_buf = '';  _buf << %Q`Hello #{@name}!
+<ul>\n`
+for item in @items
+ _buf << %Q` <li>#{escape((item).to_s)}</li>\n`
+end
+ _buf << %Q`</ul>\n`
+_buf.to_s
